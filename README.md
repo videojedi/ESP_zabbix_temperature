@@ -8,7 +8,9 @@ https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 
 ### 2) Install missing Arduino libraries
 Sketch -> Include Library -> Manage Libraries...  
-<img src="DS18B20_lib.png" width="500">
+Install library "DallasTemperature"  
+
+<img src="DS18B20_lib.png" width="500">  
 
 
 ### 3) Set your WiFi and Zabbix information
