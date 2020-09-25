@@ -30,5 +30,5 @@ ZABBIX_KEY is ...
 
 
 ## Credits
-Zabbix sender library [zaphodus](https://github.com/zaphodus/ESP8266ZabbixSender)  
-Helping configure Zabbix [Eimantas Rebzdys](https://github.com/EimantasRebzdys)
+[zaphodus](https://github.com/zaphodus/ESP8266ZabbixSender) for Zabbix sender library  
+[Eimantas Rebzdys](https://github.com/EimantasRebzdys) for Helping configure Zabbix  
