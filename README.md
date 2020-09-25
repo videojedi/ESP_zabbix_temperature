@@ -18,6 +18,12 @@ Install library "DallasTemperature"
 ZABBIXAGHOST is ...
 ZABBIX_KEY is ...
 
+### 4) Connecting DS18B20 physically
+  
+  
+  
+
+
 ## ------- Setting up your Zabbix SIDE -------
 
 
