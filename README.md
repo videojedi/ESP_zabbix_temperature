@@ -8,7 +8,7 @@ https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 
 ### Install missing Arduino libraries
 Sketch -> Include Library -> Manage Libraries...  
-![test image size](/pic/DS18B20_lib.png)
+<img src="DS18B20_lib.png" width="500">
 
 
 ### Set your WiFi and Zabbix information
