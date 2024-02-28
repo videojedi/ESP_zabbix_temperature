@@ -11,14 +11,15 @@
 ESP8266ZabbixSender zSender;
 
 /* WiFi settings */
-String ssid = "AndroidAP";
-String pass = "12345678";
+String ssid = "KOTI";
+String pass = "emilyisnottheone";
 
 /* Zabbix server setting */
-#define SERVERADDR 192, 168, 0, 123 // IP Address example 192.168.0.123
+#define SERVERADDR 10, 169, 3, 140
 #define ZABBIXPORT 10051			
 #define ZABBIXAGHOST "ESP"
-#define ZABBIX_KEY "ServerRoom"
+#define ZABBIX_KEY1 "Probe1"
+#define ZABBIX_KEY2 "Probe2"
 
 
 // DS18B20
@@ -64,17 +65,23 @@ void loop() {
   
   // Get temperature from DS18B20
   DS18B20.requestTemperatures(); 
-  float temp = DS18B20.getTempCByIndex(0);
+  float temp1 = DS18B20.getTempCByIndex(0);
+  float temp2 = DS18B20.getTempCByIndex(1);
+
   Serial.print("Temperature: ");
-  Serial.println(temp);
+  Serial.print(temp1);
+  Serial.print(" : ");
+  Serial.println(temp2);
 
   // Check connectivity
   checkConnection();
 
   // If temperature is good - send it to Zabbix
-  if (! (temp == 85.0 || temp == (-127.0))) {
+  if (! (temp1 == 85.0 || temp1 == (-127.0))) {
     zSender.ClearItem();              
-    zSender.AddItem(ZABBIX_KEY, temp); 
+    zSender.AddItem(ZABBIX_KEY1, temp1);
+    zSender.AddItem(ZABBIX_KEY2, temp2);
+
     if (zSender.Send() == EXIT_SUCCESS) {
       Serial.println("ZABBIX SEND: OK");
     } else {
